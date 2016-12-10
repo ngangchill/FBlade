@@ -8,6 +8,7 @@ use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Facades\Facade;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Blade as BaseBlade;
+use Illuminate\Support\Facades\File;
 
 class Blade
 {
@@ -26,6 +27,7 @@ class Blade
     public $aliases = [
         'View' => View::class,
         'Blade' => BaseBlade::class,
+        'File' => File::class,
     ];
    
     /**
