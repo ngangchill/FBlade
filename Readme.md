@@ -7,18 +7,17 @@ This is a standalone package for laravel blade with some extra function such as 
 
 Use Ngangchill\Blade\Blade;
 
-$pathsToTemplates = __DIR__ . '/views';
-$pathToCompiledTemplates = __DIR__ . '/compiled';
-// fire laravel blade
-Blade::fire($pathsToTemplates, $pathToCompiledTemplates);
+    $pathsToTemplates = __DIR__ . '/views';
+    $pathToCompiledTemplates = __DIR__ . '/compiled';
+    // fire laravel blade
+    Blade::fire($pathsToTemplates, $pathToCompiledTemplates);
 
-    dhoomed....
+dhoomed....
     
-    You did it ..... lets rocks...
+## You did it ..... lets rocks...
     
     
-    $data['name'] = 'Forhad Ahmed';
-
+    $data['name'] = 'Skyfall';
 
     echo View::make('index', $data)->render();
     
