@@ -16,7 +16,7 @@ This is a standalone package for laravel blade with some extra function such as 
 
     echo View::make('index', $data)->render();
     
-# KEEP IN MIND: *Special situation* [Just if you want to use Illuminate\Support\Facades\Blade ]
+# KEEP IN MIND: *Special situation* [if you want to use Illuminate\Support\Facades\Blade ]
 If you initiate blade class Ngangchill\Blade\Blade::fire('viewPath', 'compiledPath') than nothing to worry.
 But if you use an use statment for Ngangchill\Blade\Blade class Than you have be carefull to avoid unwanted error by setting an alias for Ngangchill\Blade\Blade class or
  adding a trilling slash '\' before Illuminate\Support\Facades\Blade.See the example below 
