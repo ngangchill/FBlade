@@ -9,12 +9,11 @@ Use Ngangchill\Blade\Blade;
 
     $pathsToTemplates = __DIR__ . '/views';
     $pathToCompiledTemplates = __DIR__ . '/compiled';
-    // fire laravel blade
+    //fire laravel blade
     Blade::fire($pathsToTemplates, $pathToCompiledTemplates);
 
-dhoomed....
-    
-## You did it ..... lets rocks...
+
+## You did it ..... lets rocks... :1+:
     
     
     $data['name'] = 'Skyfall';
