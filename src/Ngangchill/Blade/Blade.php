@@ -7,6 +7,7 @@ use Illuminate\Events\Dispatcher;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Facades\Facade;
 use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\Blade as BaseBlade;
 
 class Blade
 {
@@ -24,6 +25,7 @@ class Blade
      */
     public $aliases = [
         'View' => View::class,
+        'Blade' => BaseBlade::class,
     ];
    
     /**
@@ -78,7 +80,7 @@ class Blade
         if (method_exists($viewServiceProvider, 'boot') === true) {
             $this->app->call([$viewServiceProvider, 'boot']);
         }
-        
+        return $this;
     }
     /**
      * fire.

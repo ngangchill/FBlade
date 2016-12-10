@@ -17,7 +17,6 @@ return [
             null !== $data ? $data : "get_defined_vars()['__data']"
         );
     },
-    // Parse the given date and time and format it as in a format given in config
     'datetime'   => function ($expression) {
 
         preg_match_all('/\((.*?)\)/i', $expression, $matches);
@@ -30,21 +29,18 @@ return [
 
         return $output;
     },
-    // Parse the given date and format it as in a format given in config
     'date' => function ($expression) {
 
         preg_match_all('/\((.*?)\)/i', $expression, $matches);
 
         $match = $matches[1][0];
 
-        //$format = config('app.date_format');
         $format = 'jS F Y';
 
         $output = "<?php echo \Carbon\Carbon::parse($match)->format('$format'); ?>";
 
         return $output;
     },
-    /* Parse the given date and time and format it as in a format given in config */
     'time' => function ($expression) {
 
         preg_match_all('/\((.*?)\)/i', $expression, $matches);
@@ -69,6 +65,7 @@ return [
         $parameter = trim($parameter, "()");
         return "<?php namespace {$parameter}; ?>";
     },
+    /* fontawesome directive */
     'fa' => function ($expression) {
         return sprintf('<i class="fa fa-%s"></i>', trim($expression, "'"));
     },

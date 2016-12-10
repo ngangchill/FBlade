@@ -16,7 +16,6 @@ class BladeCompiler extends BaseCompiler
         parent::__construct($files, $cachePath);
         $this->compilers[] = 'Minify';
         $this->_extraStaffs();
-
     }
 
 	/**
@@ -79,7 +78,12 @@ class BladeCompiler extends BaseCompiler
             return $value;
         }
     }
-
+    
+    /**
+    *
+    * Register extra directives & extensions
+    *
+    */
     public function _extraStaffs()
     {
         // get all directives to register

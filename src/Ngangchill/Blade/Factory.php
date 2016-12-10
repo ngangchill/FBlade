@@ -1,5 +1,4 @@
 <?php
-
 namespace Ngangchill\Blade;
 
 use Illuminate\View\Factory as BaseFactory;
@@ -84,5 +83,4 @@ class Factory extends BaseFactory {
     public function flushBlocks() {
         $this->blocks = array();
     }
-
 }
