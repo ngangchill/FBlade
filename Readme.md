@@ -13,7 +13,7 @@ Use Ngangchill\Blade\Blade;
     Blade::fire($pathsToTemplates, $pathToCompiledTemplates);
 
 
-## You did it ..... lets rocks... :1+:
+## You did it ..... lets rocks... 
     
     
     $data['name'] = 'Skyfall';
