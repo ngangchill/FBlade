@@ -25,7 +25,7 @@ class Blade
      */
     public $aliases = [
         'View' => View::class,
-        'Blade' => BaseBlade::class,
+        'BladeFacades' => BaseBlade::class,
     ];
    
     /**
