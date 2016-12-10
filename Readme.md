@@ -1,23 +1,46 @@
 ## Ngangchill\Blade
-
+    
 This is a standalone package for laravel blade with some extra function such as partial, some usefull directives
 & extensions.I have created this library from scretch. I merged some library found in github.So special creadits goes them.Thanks for using.
 
 ### use:
-
 
     $pathsToTemplates = __DIR__ . '/views';
     $pathToCompiledTemplates = __DIR__ . '/compiled';
     //fire laravel blade
     Ngangchill\Blade\Blade::fire($pathsToTemplates, $pathToCompiledTemplates);
 
-
-## You did it ..... lets rocks... 
-    
+## You did it ..... lets rocks...     
     
     $data['name'] = 'Skyfall';
 
     echo View::make('index', $data)->render();
+    
+# KEEP IN MIND: *Special situation*
+if you initiate blade class Ngangchill\Blade\Blade::fire('viewPath', 'compiledPath') than nothing to worry
+but if you use an use statment for Ngangchill\Blade\Blade class Than you have be carefull to avoid unwanted error by setting an alias for Ngangchill\Blade\Blade class or
+ adding a trilling slash '\' before laravel blade facades.See the example below 
+
+
+To use laravel blade facades call it as -
+
+    \Blade::.....
+    
+    //such as
+    \Blade::directive('datetime', function ($expression) {
+        return "<?php echo $expression->format('m/d/Y H:i'); ?>";
+    });
+    
+or 
+
+Set an alias:
+    use Ngangchill\Blade\Blade as BaseBlade;
+    //then
+    BaseBlade::fire(......);
+    
+   
+  
+Otherwise it may throughs unwanted error.   
     
 ## [Read More on laravel.com](https://laravel.com/docs/5.3/blade)
    
