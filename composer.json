@@ -1,0 +1,23 @@
+{
+    "name": "ngangchill/blade",
+    "description": "This is a standalone package for laravel blade with some extra function such as partial, some usefull directives. i created this library from scretch, so special creadits goes them.Thanks for using.",
+    "keywords": ["php", "blade", "laravel Blade"],
+    "homepage": "https://github.com/ngangchill/blade",
+    "require": {
+        "php": ">=5.5.9",
+        "illuminate/view": "~5.2.0"
+    },
+    "authors": [
+        {
+            "name": "ngangchill",
+            "email": "ngangchill@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-0": {
+            "Ngangchill": "src/"
+        }
+        
+    },
+    "minimum-stability": "stable"
+}
