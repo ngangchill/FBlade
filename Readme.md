@@ -27,6 +27,22 @@ Use Ngangchill\Blade\Blade;
 
 Creating a Partial
 ------------------
+We use the `@render('block-to-render')` directive to render a block of content that was provided via the respective `@block` directive. Note that we can also provide a default value.
+
+```html
+<div class="panel">
+    <div class="panel-heading">
+        <h3 class="panel-title">@render('title', 'Default Title')</h3>
+    </div>
+    <div class="panel-body">
+        @render('body', 'Default Body')
+    </div>
+</div> 
+```
+
+View a Partial
+-------------------
+
 Partials start with the `@partial('path.to.view')` directive, which accepts the view you want the partial to extend from, and end with the `@endpartial` directive.
 
 ```php
@@ -41,20 +57,6 @@ Partials start with the `@partial('path.to.view')` directive, which accepts the 
 
 Blocks within partials behave the same way as sections within templates. They capture a piece of data that will be rendered into the extended view.
 
-Rendering a Partial
--------------------
-We use the `@render('block-to-render')` directive to render a block of content that was provided via the respective `@block` directive. Note that we can also provide a default value.
-
-```html
-<div class="panel">
-    <div class="panel-heading">
-        <h3 class="panel-title">@render('title', 'Default Title')</h3>
-    </div>
-    <div class="panel-body">
-        @render('body', 'Default Body')
-    </div>
-</div> 
-```
 
 # Special thanks to **crhayes**
 
