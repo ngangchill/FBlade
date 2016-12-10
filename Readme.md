@@ -5,12 +5,11 @@ This is a standalone package for laravel blade with some extra function such as 
 
 ### use:
 
-Use Ngangchill\Blade\Blade;
 
     $pathsToTemplates = __DIR__ . '/views';
     $pathToCompiledTemplates = __DIR__ . '/compiled';
     //fire laravel blade
-    Blade::fire($pathsToTemplates, $pathToCompiledTemplates);
+    Ngangchill\Blade\Blade::fire($pathsToTemplates, $pathToCompiledTemplates);
 
 
 ## You did it ..... lets rocks... 
