@@ -38,9 +38,10 @@ Set an alias:
     use Ngangchill\Blade\Blade as BaseBlade;
     //then
     BaseBlade::fire(......);
+    Blade::directive('datetime', function ($expression) {
+        return "<?php echo $expression->format('m/d/Y H:i'); ?>";
+    });
     
-   
-  
 Otherwise it may throughs unwanted error.   
     
 ## [Read More on laravel.com](https://laravel.com/docs/5.3/blade)
