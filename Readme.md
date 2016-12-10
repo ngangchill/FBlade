@@ -56,7 +56,7 @@ We use the `@render('block-to-render')` directive to render a block of content t
 </div> 
 ```
 
-## Special thanks to **crhayes**
+# Special thanks to **crhayes**
 
 ## Directives:
 
