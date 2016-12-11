@@ -51,9 +51,9 @@ or
 
 Set an alias:
 
-    use Ngangchill\Blade\Blade as BaseBlade;
+    use Ngangchill\Blade\Blade as ViewFactory;
     //then
-    BaseBlade::fire(......);
+    ViewFactory::fire(......);
     Blade::directive('datetime', function ($expression) {
         return "<?php echo $expression->format('m/d/Y H:i'); ?>";
     });
