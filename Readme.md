@@ -15,9 +15,9 @@ This is a standalone package for laravel blade with some extra function such as 
 
 ## Example:    
     
-    $data['name'] = 'Skyfall';
+    $name = 'Skyfall';
 
-    echo View::make('index', $data)->render();
+    echo View::make('index', ['name' => $name])->render();
     
     // Add a location to the array of view locations.
     View::addLocation($newPath);
@@ -27,7 +27,7 @@ This is a standalone package for laravel blade with some extra function such as 
         return "<?php echo 'Hellow <em>' . $name . '</em>'; ?>";
     });
     
-    // For more info read [laravel Blade Template Docs](https://laravel.com/docs/5.3/blade)
+    // For more info read laravel Blade Template Docs 
     
 # KEEP IN MIND: *Special situation* [if you want to use Illuminate\Support\Facades\Blade ]
 If you initiate blade class Ngangchill\Blade\Blade::fire('viewPath', 'compiledPath') than nothing to worry.
