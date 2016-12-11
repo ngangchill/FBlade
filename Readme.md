@@ -1,20 +1,33 @@
 ## Ngangchill\Blade
     
 This is a standalone package for laravel blade with some extra function such as partial, some usefull directives
-& extensions.I have created this library from scretch. I merged some library found in github.So special creadits goes them.Thanks for using.
+& extensions.Thanks for using.
 
 ### use:
 
     $pathsToTemplates = __DIR__ . '/views';
     $pathToCompiledTemplates = __DIR__ . '/compiled';
+    
     //fire laravel blade
     Ngangchill\Blade\Blade::fire($pathsToTemplates, $pathToCompiledTemplates);
+    
+## ALL DONE done... lets play with laravel **Blade Templates**. Now you can use every Blade functions as documented in laravel bladetemplate docs.
 
-## You did it ..... lets rocks...     
+## Example:    
     
     $data['name'] = 'Skyfall';
 
     echo View::make('index', $data)->render();
+    
+    // Add a location to the array of view locations.
+    View::addLocation($newPath);
+    
+    // lets register a new directives
+    Blade::directive('hellow', function ($name) {
+        return "<?php echo 'Hellow <em>' . $name . '</em>'; ?>";
+    });
+    
+    // For more info read [laravel Blade Template Docs](https://laravel.com/docs/5.3/blade)
     
 # KEEP IN MIND: *Special situation* [if you want to use Illuminate\Support\Facades\Blade ]
 If you initiate blade class Ngangchill\Blade\Blade::fire('viewPath', 'compiledPath') than nothing to worry.
@@ -23,10 +36,13 @@ But if you use an use statment for Ngangchill\Blade\Blade class Than you have be
 
 
 To use laravel blade facades call it as -
-
-    \Blade::.....
     
-    //such as
+    use Ngangchill\Blade\Blade;
+    
+    //fire laravel blade
+    Blade::fire($pathsToTemplates, $pathToCompiledTemplates);
+    
+    //Now call **Illuminate\Support\Facades\Blade** as \Blade::()....
     \Blade::directive('datetime', function ($expression) {
         return "<?php echo $expression->format('m/d/Y H:i'); ?>";
     });
@@ -81,10 +97,9 @@ Partials start with the `@partial('path.to.view')` directive, which accepts the 
 
 Blocks within partials behave the same way as sections within templates. They capture a piece of data that will be rendered into the extended view.
 
-
 # Special thanks to **crhayes**
 
-## Directives:
+## Available Directives:
 
     @explode()
     @implode()
@@ -96,8 +111,3 @@ Blocks within partials behave the same way as sections within templates. They ca
     @use()
     @namespace()
     @fa()
-    
-## Extensions
-
-    @macro()
-
