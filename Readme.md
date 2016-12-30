@@ -45,7 +45,7 @@ To use laravel blade facades call it as -
     use Ngangchill\Blade\Blade;
     
     //fire laravel blade
-    Blade::fire($pathsToTemplates, $pathToCompiledTemplates);
+    Blade::fire->setUpBlade($pathsToTemplates, $pathToCompiledTemplates);
     
     //Now call **Illuminate\Support\Facades\Blade** as \Blade::()....
     \Blade::directive('datetime', function ($expression) {
