@@ -9,11 +9,11 @@ This is a standalone package for laravel blade with some extra function such as 
     $pathToCompiledTemplates = __DIR__ . '/compiled';
     
     //fire laravel blade statically
-    Ngangchill\Blade\Blade::fire->setUpBlade($pathsToTemplates, $pathToCompiledTemplates);
+    Ngangchill\Blade\Blade::fire()->setPaths($pathsToTemplates, $pathToCompiledTemplates);
     
     // or 
     $app = new Ngangchill\Blade\Blade();
-    $app->setUpBlade($pathsToTemplates, $pathToCompiledTemplates);
+    $app->setPaths($pathsToTemplates, $pathToCompiledTemplates);
     
     
 ## ALL DONE done... lets play with laravel **Blade Templates**. Now you can use every Blade functions as documented in laravel bladetemplate docs.
@@ -35,7 +35,7 @@ This is a standalone package for laravel blade with some extra function such as 
     // For more info read laravel Blade Template Docs 
     
 # KEEP IN MIND: *Special situation* [if you want to use Illuminate\Support\Facades\Blade ]
-If you initiate blade class Ngangchill\Blade\Blade::fire->setUpBlade('viewPath', 'compiledPath') than nothing to worry.
+If you initiate blade class Ngangchill\Blade\Blade::fire()->setPaths('viewPath', 'compiledPath') than nothing to worry.
 But if you use an use statment for Ngangchill\Blade\Blade class Than you have be carefull to avoid unwanted error by setting an alias for Ngangchill\Blade\Blade class or
  adding a trilling slash '\' before Illuminate\Support\Facades\Blade.See the example below 
 
@@ -45,7 +45,7 @@ To use laravel blade facades call it as -
     use Ngangchill\Blade\Blade;
     
     //fire laravel blade
-    Blade::fire->setUpBlade($pathsToTemplates, $pathToCompiledTemplates);
+    Blade::fire()->setPaths($pathsToTemplates, $pathToCompiledTemplates);
     
     //Now call **Illuminate\Support\Facades\Blade** as \Blade::()....
     \Blade::directive('datetime', function ($expression) {
@@ -58,7 +58,7 @@ Set an alias:
 
     use Ngangchill\Blade\Blade as ViewFactory;
     //then
-    ViewFactory::fire->setUpBlade(......);
+    ViewFactory::fire()->setPaths(......);
     Blade::directive('datetime', function ($expression) {
         return "<?php echo $expression->format('m/d/Y H:i'); ?>";
     });

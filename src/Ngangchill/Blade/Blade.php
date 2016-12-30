@@ -78,7 +78,7 @@ class Blade
      *
      * @return mixed
      */
-    public function setUpBlade($viewPath, $compiledPath)
+    public function setPaths($viewPath, $compiledPath)
     {  
         
         $this->app['config']['view.paths'] = is_array($viewPath) ? $viewPath : [$viewPath];
