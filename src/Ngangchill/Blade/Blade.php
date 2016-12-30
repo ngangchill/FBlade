@@ -19,6 +19,13 @@ class Blade
      */
     public $app;
     
+     /**
+     * $instance.
+     *
+     * @var self
+     */
+    public static $instance;
+    
     /**
      * $aliases.
      *
@@ -71,7 +78,7 @@ class Blade
      *
      * @return mixed
      */
-    public function setPaths($viewPath, $compiledPath)
+    public function setUpBlade($viewPath, $compiledPath)
     {  
         
         $this->app['config']['view.paths'] = is_array($viewPath) ? $viewPath : [$viewPath];
@@ -84,18 +91,19 @@ class Blade
         }
         return $this;
     }
+  
     /**
-     * fire.
-     *
-     * @method static fire
-     *
-     * @param string $viewPath
-     * @param string $compiledPath
-     *
+     * Blade static instance.
+     * @method fire
      * @return static
      */
-    public static function fire($viewPath, $compiledPath)
+    public static function fire()
     {
-        (new Blade())->setPaths($viewPath, $compiledPath);
+        if (is_null(static::$instance) === true) {
+            static::$instance = new static();
+        }
+        return static::$instance;
     }
+    
+    
 }

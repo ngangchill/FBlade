@@ -8,8 +8,13 @@ This is a standalone package for laravel blade with some extra function such as 
     $pathsToTemplates = __DIR__ . '/views';
     $pathToCompiledTemplates = __DIR__ . '/compiled';
     
-    //fire laravel blade
-    Ngangchill\Blade\Blade::fire($pathsToTemplates, $pathToCompiledTemplates);
+    //fire laravel blade statically
+    Ngangchill\Blade\Blade::fire->setUpBlade($pathsToTemplates, $pathToCompiledTemplates);
+    
+    // or 
+    $app = new Ngangchill\Blade\Blade();
+    $app->setUpBlade($pathsToTemplates, $pathToCompiledTemplates);
+    
     
 ## ALL DONE done... lets play with laravel **Blade Templates**. Now you can use every Blade functions as documented in laravel bladetemplate docs.
 
@@ -53,7 +58,7 @@ Set an alias:
 
     use Ngangchill\Blade\Blade as ViewFactory;
     //then
-    ViewFactory::fire(......);
+    ViewFactory::fire->setUpBlade(......);
     Blade::directive('datetime', function ($expression) {
         return "<?php echo $expression->format('m/d/Y H:i'); ?>";
     });
