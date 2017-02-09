@@ -4,7 +4,7 @@
     "keywords": ["php", "blade", "laravel Blade"],
     "homepage": "https://github.com/ngangchill/blade",
     "require": {
-        "php": ">=5.5.9",
+        "php": ">=5.6.4",
         "illuminate/view": "~5.4.0"
     },
     "authors": [
