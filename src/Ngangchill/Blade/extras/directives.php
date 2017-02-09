@@ -69,4 +69,12 @@ return [
     'fa' => function ($expression) {
         return sprintf('<i class="fa fa-%s"></i>', trim($expression, "'"));
     },
+    'json' => function ($expression) {
+        return "<?php echo(json_encode($expression)); ?>";
+    },
+    'icon' => function ($expression) {
+        $icon = substr($expression, 1, -1);
+        return "<?php echo('<i class=\"fa fa-{$icon}\"></i>'); ?>";
+    },
+    
 ];
